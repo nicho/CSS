@@ -82,7 +82,7 @@ public class AuctionUserService {
 
 						// 记录日志
 						IntegralHistory ih = new IntegralHistory();
-						ih.setAuction(auction);
+			//			ih.setAuction(auction);
 						ih.setCreateDate(new Date());
 						ih.setDescription("竞拍物品:'" + auction.getGoodsName() + "',数量:" + auctionUser.getNumber() + ",扣除积分:"	+ auctionUser.getAuctionIntegral() );
 						ih.setIntegral(auctionUser.getAuctionIntegral());
@@ -103,7 +103,7 @@ public class AuctionUserService {
 							
 							// 记录日志
 							IntegralHistory ih2 = new IntegralHistory();
-							ih2.setAuction(auction);
+					//		ih2.setAuction(auction);
 							ih2.setCreateDate(new Date());
 							ih2.setDescription("个人物品竞拍:'" + auction.getGoodsName() + "',数量:" + auctionUser.getNumber() + ",获得积分:" + auctionUser.getAuctionIntegral());
 							ih2.setIntegral(auctionUser.getAuctionIntegral());

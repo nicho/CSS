@@ -30,9 +30,11 @@ public class IndexController {
 		ShiroUser user = (ShiroUser) SecurityUtils.getSubject().getPrincipal();
 		User u=accountService.getUser(user.getId()); 
 		user.setIntegral(u.getIntegral());
-		String orgId = ReadProperties.getDomainMap().get("orgId");
-		String orgNotice=orgService.getMyOrgNotice(new Long(orgId));
-		model.addAttribute("orgNotice", orgNotice);
+		
+//		String orgId = ReadProperties.getDomainMap().get("orgId");
+//		String orgNotice=orgService.getMyOrgNotice(new Long(orgId));
+//		model.addAttribute("orgNotice", orgNotice);
+		
 		return "account/myindex";
 	} 
 

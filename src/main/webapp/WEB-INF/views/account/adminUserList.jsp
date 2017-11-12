@@ -29,7 +29,7 @@
 			
 	</div>
 	<div>
-	 <font color="red"><b>公会总积分:<fmt:formatNumber value="${IntegralSum}" pattern="##.##"/></b></font>
+	 <font color="red"><b>公司总积分:<fmt:formatNumber value="${IntegralSum}" pattern="##.##"/></b></font>
 	</div>
 	<br>
 	<table id="contentTable"
@@ -38,7 +38,7 @@
 			<tr>
 				<th>登录名</th>
 				<th>昵称</th>
-				<th>游戏角色名</th>
+				<th>经销商名称</th>
 				<th>注册时间</th>
 				<th>权限</th>
 				<th>邮箱</th>

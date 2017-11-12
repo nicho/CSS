@@ -47,7 +47,7 @@ public class ExchangeGoodsService {
 		userDao.save(user);
 		// 记录日志
 		IntegralHistory ih=new IntegralHistory();
-		ih.setExchangeGoods(entity);
+	//	ih.setExchangeGoods(entity);
 		ih.setCreateDate(new Date());
 		ih.setDescription("拍得物品:'"+entity.getGoodsName()+"',扣除积分:"+entity.getIntegral());
 		ih.setIntegral(entity.getIntegral());

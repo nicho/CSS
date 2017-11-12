@@ -63,7 +63,7 @@ public class ExchangeIntegralApplyService {
 			 
 			// 记录日志	
 			IntegralHistory ih=new IntegralHistory();
-			ih.setExchangeIntegralApply(entity);
+		//	ih.setExchangeIntegralApply(entity);
 			ih.setCreateDate(new Date());
 			ih.setDescription("使用物品:'"+entity.getExchangeIntegral().getGoodsName()+"',兑换积分:"+entity.getIntegral());
 			ih.setIntegral(entity.getIntegral());

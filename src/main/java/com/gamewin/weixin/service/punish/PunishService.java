@@ -47,7 +47,7 @@ public class PunishService {
 		userDao.save(user);
 		// 记录日志
 		IntegralHistory ih = new IntegralHistory();
-		ih.setPunish(entity);
+		//ih.setPunish(entity);
 		ih.setCreateDate(new Date());
 		ih.setDescription("惩罚项目:'" + entity.getDescription() + "',扣除积分:" + entity.getIntegral());
 		ih.setIntegral(entity.getIntegral());

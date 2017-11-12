@@ -34,7 +34,7 @@
 			<tr> 
 				<th style="text-align: center;">名次</th>
 				<th>昵称</th>
-				<th>游戏角色名</th> 
+				<th>经销商名称</th> 
 				<th>级别</th> 
 				<th>积分</th>  
 			</tr>

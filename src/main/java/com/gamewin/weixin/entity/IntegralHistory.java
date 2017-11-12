@@ -16,76 +16,11 @@ public class IntegralHistory extends IdEntity {
 	private String mark;
 	private Date createDate;
 	private User user;
-	private String status; 
+	private String status;
 	private Integer isdelete;
-	private Activity activity;
-	private ExchangeGoods exchangeGoods;
-	private ExchangeIntegralApply exchangeIntegralApply;
-	private Auction auction;
-	private AuctionApply auctionApply;
-	private Punish punish;
-	@ManyToOne
-	@JoinColumn(name = "punish_id")
-	public Punish getPunish() {
-		return punish;
-	}
-
-	public void setPunish(Punish punish) {
-		this.punish = punish;
-	}
-
-	@ManyToOne
-	@JoinColumn(name = "auction_apply_id")
-	public AuctionApply getAuctionApply() {
-		return auctionApply;
-	}
-
-	public void setAuctionApply(AuctionApply auctionApply) {
-		this.auctionApply = auctionApply;
-	}
-
-	@ManyToOne
-	@JoinColumn(name = "auction_id")
-	public Auction getAuction() {
-		return auction;
-	}
-
-	public void setAuction(Auction auction) {
-		this.auction = auction;
-	}
-
-	@ManyToOne
-	@JoinColumn(name = "activity_id")
-	public Activity getActivity() {
-		return activity;
-	}
-
-	public void setActivity(Activity activity) {
-		this.activity = activity;
-	}
-	@ManyToOne
-	@JoinColumn(name = "exchangegoods_id")
-	public ExchangeGoods getExchangeGoods() {
-		return exchangeGoods;
-	}
-
-	public void setExchangeGoods(ExchangeGoods exchangeGoods) {
-		this.exchangeGoods = exchangeGoods;
-	}
-
- 
 
 	public String getStatus() {
 		return status;
-	}
-	@ManyToOne
-	@JoinColumn(name = "exchangeintegralapply_id")
-	public ExchangeIntegralApply getExchangeIntegralApply() {
-		return exchangeIntegralApply;
-	}
-
-	public void setExchangeIntegralApply(ExchangeIntegralApply exchangeIntegralApply) {
-		this.exchangeIntegralApply = exchangeIntegralApply;
 	}
 
 	public void setStatus(String status) {

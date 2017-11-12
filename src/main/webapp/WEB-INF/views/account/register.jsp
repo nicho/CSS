@@ -65,7 +65,7 @@
  
  <div class="bodycss">
  	<div>
- 	<h3><a href="${ctx}">《DKP》公会系统</a><small>--</small> <small>用户注册</small></h3>
+ 	<h3><a href="${ctx}">渠道自助服务平台</a><small>--</small> <small>用户注册</small></h3>
  	</div>
   <div class="view_box mb15">
     <ul>

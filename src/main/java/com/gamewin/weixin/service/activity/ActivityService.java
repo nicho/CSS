@@ -92,7 +92,7 @@ public class ActivityService {
 			userDao.save(user);
 			// 记录日志
 			IntegralHistory ih = new IntegralHistory();
-			ih.setActivity(entity);
+	//		ih.setActivity(entity);
 			ih.setCreateDate(new Date());
 			ih.setDescription("发布个人活动:'" + entity.getTitle() + "',扣除积分:" + entity.getIntegral());
 			ih.setIntegral(entity.getIntegral());
@@ -193,7 +193,7 @@ public class ActivityService {
 
 				// 记录日志
 				IntegralHistory ih = new IntegralHistory();
-				ih.setActivity(entity);
+		//		ih.setActivity(entity);
 				ih.setCreateDate(new Date());
 				ih.setDescription("参与公会活动:'" + entity.getTitle() + "',获得积分:" + pInteger);
 				ih.setIntegral(pInteger);
@@ -228,7 +228,7 @@ public class ActivityService {
 
 					// 记录日志
 					IntegralHistory ih = new IntegralHistory();
-					ih.setActivity(entity);
+				//	ih.setActivity(entity);
 					ih.setCreateDate(new Date());
 					ih.setDescription("参与个人活动:'" + entity.getTitle() + "',获得积分:" + pInteger);
 					ih.setIntegral(pInteger);

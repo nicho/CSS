@@ -10,7 +10,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>《DKP》公会系统:</title>
+<title>渠道自助服务平台:</title>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="Pragma" content="no-cache" />
