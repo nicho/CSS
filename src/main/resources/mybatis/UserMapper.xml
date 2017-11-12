@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace必须指向Dao接口 -->
+<mapper namespace="com.gamewin.weixin.mybatis.UserMybatisDao">
+	<resultMap id="userMap" type="User">
+		<id property="id" column="id" />
+		<result property="loginName" column="login_Name" /> 
+		<result property="name" column="name" /> 
+		<result property="roles" column="roles" /> 
+		<result property="registerDate" column="register_Date" /> 
+		<result property="status" column="status" />  
+		<result property="loginName" column="login_Name" />  
+		<result property="gameName" column="game_name" />  
+		<result property="phone" column="phone" />  
+		<result property="email" column="email" />  
+		<result property="weixinOpenid" column="weixinOpenid" />   
+		<result property="rank" column="rank" />   
+	</resultMap>
+	 
+	<select id="getUserAllUserlist" parameterType="com.gamewin.weixin.model.QueryUserDto" resultMap="userMap">
+		SELECT u.*,CASE 
+		WHEN u.roles='admin' THEN 1 WHEN u.roles='Head' THEN 2  
+		WHEN u.roles='OneLevel' THEN 3  WHEN u.roles='TwoLevel' THEN 4
+		WHEN u.roles='ThreeLevel' THEN 5  ELSE 6 END paixu 
+		FROM wx_user u  WHERE u.isdelete=0 
+		<if test="search_LIKE_userName !=null and '' !=search_LIKE_userName">
+			and (u.game_Name like CONCAT('%',#{search_LIKE_userName},'%')   or  u.login_name like CONCAT('%',#{search_LIKE_userName},'%')  or u.name like CONCAT('%',#{search_LIKE_userName},'%') )
+		</if>
+		 ORDER BY paixu,u.name,u.game_name 
+	</select>
+   <select id="getUserAllUserIntegrallist" parameterType="com.gamewin.weixin.model.QueryUserDto" resultMap="userMap">
+		SELECT u.* ,(SELECT COUNT(1) + 1  FROM wx_user B  WHERE B.isdelete=0 AND u.integral &lt; B.integral) AS rank  
+			FROM wx_user u  WHERE u.isdelete=0 
+		 <if test="search_LIKE_userName !=null and '' !=search_LIKE_userName">
+			and (u.game_Name like CONCAT('%',#{search_LIKE_userName},'%')   or  u.login_name like CONCAT('%',#{search_LIKE_userName},'%')  or u.name like CONCAT('%',#{search_LIKE_userName},'%') )
+		</if>
+		 ORDER BY u.integral DESC
+	</select>
+ 
+    <select id="getAllIntegralSum" resultType="java.lang.Double" >
+		SELECT SUM(u.`integral`) FROM wx_user u where u.status='enabled'
+	</select>
+	 
+ 
+</mapper> 
